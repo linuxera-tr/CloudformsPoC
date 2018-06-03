@@ -1,0 +1,15 @@
+---
+- hosts: all
+
+  vars:
+    
+  tasks:
+    - debug:
+        msg: "Running PLAYBOOK TEST"
+    
+    - name: return hostname
+      command: hostnamectl
+      register: hname
+
+    - debug: 
+        var: hname
