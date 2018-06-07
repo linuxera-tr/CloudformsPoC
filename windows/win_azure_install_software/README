@@ -1,0 +1,3 @@
+YAML dosyasında yer alan repo_server_name değeri girilmedi.  
+Azure ortamında deployment yapılırken;  VS2017 dosyalarının alınabileceği bir httpd server konfigüre edilmelidir.  
+7Zip dosyası internetten çekilmektedir.  
