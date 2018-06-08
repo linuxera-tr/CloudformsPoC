@@ -60,3 +60,5 @@
           ignore_errors: yes
       when: install_vs2017 =="t"
     - win_reboot:
+        shutdown_timeout: 3600
+        reboot_timeout: 3600            
