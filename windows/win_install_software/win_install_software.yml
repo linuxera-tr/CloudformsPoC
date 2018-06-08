@@ -52,7 +52,7 @@
         - name: Import SSL Certificates 
           win_shell: C:\VS2017Offline\import_certificates.bat
         - name: Install Visual Studio 2017
-          win_shell: C:\VS2017Offline\vs_Enterprise.exe --add Microsoft.VisualStudio.Workload.ManagedDesktop --includeRecommended --quiet --wait --noWeb
+          win_shell: C:\VS2017Offline\vs_Enterprise.exe --add Microsoft.VisualStudio.Workload.ManagedDesktop --includeRecommended --quiet --wait --noWeb --norestart
           register: result
           retries: 3
           delay: 60
