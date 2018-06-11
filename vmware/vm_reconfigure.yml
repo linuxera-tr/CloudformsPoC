@@ -1,0 +1,33 @@
+---
+- hosts: localhost
+  vars:
+  tasks:
+  - name: Reconfigure VM CPU
+    vmware_guest:
+      hostname: "{{ rc_hostname }}"
+      username: "{{ rc_username }}"
+      password: "{{ rc_password }}"
+      uuid: "{{ rc_vm_uuid }}"
+      name: "{{ rc_vm_name }}"
+      hardware:
+        num_cpus: "{{ rc_nr_of_cpus }}"
+        num_cpu_cores_per_socket: "{{ rc_nr_of_cores }}"
+      folder: "{{ rc_vm_folder }}"
+      state: present
+      validate_certs: false
+    delegate_to: localhost
+    when: rc_cpu == "t"
+  - name: Reconfigure VM Memory
+    vmware_guest:
+      hostname: "{{ rc_hostname }}"
+      username: "{{ rc_username }}"
+      password: "{{ rc_password }}"
+      uuid: "{{ rc_vm_uuid }}"
+      name: "{{ rc_vm_name }}"
+      hardware:
+        memory_mb: "{{ rc_vm_memory }}"
+      folder: "{{ rc_vm_folder }}"
+      state: present
+      validate_certs: false
+    delegate_to: localhost
+    when: rc_memory == "t"
