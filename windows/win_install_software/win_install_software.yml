@@ -58,8 +58,8 @@
           delay: 60
           until: result|succeeded
           ignore_errors: yes
-        - name: Reboot VM
-          win_reboot:
-            shutdown_timeout: 3600
-            reboot_timeout: 3600            
       when: install_vs2017 =="t"
+    - name: Reboot VM
+      win_reboot:
+        shutdown_timeout: 3600
+        reboot_timeout: 3600
