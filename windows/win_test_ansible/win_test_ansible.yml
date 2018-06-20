@@ -1,0 +1,14 @@
+---
+  - hosts: all
+
+    tasks:
+     - name: create Development folder
+       win_file:
+         path: C:\Development
+         state: directory
+
+     - name: run ipconfig
+       raw: ipconfig
+       register: ipconfig
+      
+     - debug: var=ipconfig
